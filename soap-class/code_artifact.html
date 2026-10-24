@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>植萃手工皂製作流程教學 - 銀髮樂活手作坊</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Noto Sans TC -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        herbal: {
+                            50: '#f1f8e9',
+                            100: '#dcedc8',
+                            600: '#7cb342',
+                            700: '#558b2f',
+                            800: '#33691e',
+                            900: '#1b5e20',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f8faf5;
+            color: #2c3e50;
+        }
+        .text-lg-accessibility {
+            font-size: 1.125rem;
+        }
+    </style>
+</head>
+<body class="bg-[#f8faf5] text-gray-800 antialiased transition-all duration-300" id="body-container">
+
+    <!-- 頂部導覽列 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-emerald-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-full bg-emerald-700 text-white flex items-center justify-center shadow-md">
+                    <i class="fa-solid fa-leaf text-2xl"></i>
+                </div>
+                <div>
+                    <span class="text-xs font-semibold text-emerald-700 tracking-wider uppercase block">學甲區三慶里社區發展協會</span>
+                    <h1 class="text-xl sm:text-2xl font-bold text-gray-800">銀髮樂活手作坊</h1>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+                <!-- 字型放大切換按鈕 (輔助長者) -->
+                <button onclick="toggleFontSize()" id="font-toggle-btn" class="hidden sm:flex items-center space-x-1 px-3 py-2 bg-emerald-50 text-emerald-800 text-sm font-medium rounded-xl hover:bg-emerald-100 transition border border-emerald-200">
+                    <i class="fa-solid fa-text-height"></i>
+                    <span id="font-btn-text">放大字體</span>
+                </button>
+                <a href="#register" class="bg-emerald-700 hover:bg-emerald-800 text-white px-4 sm:px-6 py-2.5 rounded-xl font-bold shadow-md hover:shadow-lg transition flex items-center space-x-2 text-base">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>立即報名</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero 區塊 -->
+    <section class="relative bg-gradient-to-b from-emerald-100 via-emerald-50 to-[#f8faf5] py-16 sm:py-24 overflow-hidden border-b border-emerald-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-semibold bg-emerald-200 text-emerald-900 mb-6 shadow-sm">
+                    <i class="fa-solid fa-seedling mr-2 text-emerald-700"></i> 社區健康手作課程・歡迎銀髮長者參與
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-6">
+                    植萃手工皂製作流程教學
+                </h2>
+                <p class="text-lg sm:text-xl text-gray-700 mb-10 leading-relaxed font-medium">
+                    結合天然植物油與草本萃取，在動手做的過程中活絡筋骨、紓壓療癒，親手打造專屬全家人的天然安心好皂！
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#download-section" class="w-full sm:w-auto bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 flex items-center justify-center space-x-3">
+                        <i class="fa-solid fa-download text-xl"></i>
+                        <span>下載課程講義 PDF</span>
+                    </a>
+                    <a href="#steps" class="w-full sm:w-auto bg-white hover:bg-emerald-50 text-emerald-800 font-bold text-lg px-8 py-4 rounded-2xl shadow-md border border-emerald-200 transition flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span>查看參與步驟</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 裝飾圓形 -->
+        <div class="absolute -bottom-20 -left-20 w-72 h-72 bg-emerald-200/50 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -top-20 -right-20 w-72 h-72 bg-lime-200/50 rounded-full blur-3xl pointer-events-none"></div>
+    </section>
+
+    <!-- 核心亮點卡片區塊 (4項) -->
+    <section class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-3">課程四大核心亮點</h3>
+            <p class="text-gray-600 text-lg">專為社區長者與學員精心規劃的安心手作體驗</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <!-- 亮點 1 -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition border border-emerald-100 flex flex-col justify-between group">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-2xl mb-6 group-hover:bg-emerald-700 group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">溫和不刺激</h4>
+                    <p class="text-gray-600 leading-relaxed text-base">
+                        嚴選天然植物油與草本萃取（抹草、艾草等），呵護敏弱肌膚，洗後清爽滋潤不緊繃。
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-100 text-xs font-semibold text-emerald-700 flex items-center">
+                    <i class="fa-solid fa-check mr-1.5"></i> 100% 天然植物成分
+                </div>
+            </div>
+
+            <!-- 亮點 2 -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition border border-emerald-100 flex flex-col justify-between group">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-2xl mb-6 group-hover:bg-emerald-700 group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">安全調配教學</h4>
+                    <p class="text-gray-600 leading-relaxed text-base">
+                        專業老師現場帶領，學習基礎油與氫氧化鈉（安全溶鹼）的精準比例與操作防護。
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-100 text-xs font-semibold text-emerald-700 flex items-center">
+                    <i class="fa-solid fa-check mr-1.5"></i> 步驟拆解安心上手
+                </div>
+            </div>
+
+            <!-- 亮點 3 -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition border border-emerald-100 flex flex-col justify-between group">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-2xl mb-6 group-hover:bg-emerald-700 group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-gift"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">專屬天然好皂</h4>
+                    <p class="text-gray-600 leading-relaxed text-base">
+                        親手製作、親自調配香氣，做出獨一無二的植萃平安皂，自用送禮兩相宜。
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-100 text-xs font-semibold text-emerald-700 flex items-center">
+                    <i class="fa-solid fa-check mr-1.5"></i> 成品帶回家
+                </div>
+            </div>
+
+            <!-- 亮點 4 -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition border border-emerald-100 flex flex-col justify-between group">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-2xl mb-6 group-hover:bg-emerald-700 group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-hands-holding"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">銀髮樂活紓壓</h4>
+                    <p class="text-gray-600 leading-relaxed text-base">
+                        透過手部溫和延展與攪拌動作，促進手部血液循環，並在手作過程中達到身心紓壓與社交樂趣。
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-100 text-xs font-semibold text-emerald-700 flex items-center">
+                    <i class="fa-solid fa-check mr-1.5"></i> 樂齡健康促進
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 參與流程區塊 (3步驟) -->
+    <section id="steps" class="bg-emerald-900 text-white py-16 sm:py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-emerald-300 uppercase tracking-widest text-sm font-bold block mb-2">Easy Participation</span>
+                <h3 class="text-3xl sm:text-4xl font-extrabold">課程參與三步驟</h3>
+                <p class="text-emerald-100 text-lg mt-2">簡單三步驟，輕鬆加入我們的社區手作坊</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- 步驟一 -->
+                <div class="bg-emerald-800/80 backdrop-blur-sm p-8 rounded-3xl border border-emerald-700 relative">
+                    <div class="absolute -top-5 left-8 w-12 h-12 rounded-2xl bg-emerald-400 text-emerald-950 font-black text-xl flex items-center justify-center shadow-md">
+                        1
+                    </div>
+                    <div class="pt-4">
+                        <h4 class="text-xl font-bold text-white mb-3 flex items-center">
+                            <i class="fa-solid fa-phone-volume mr-3 text-emerald-300"></i> 電話或里辦公處登記
+                        </h4>
+                        <p class="text-emerald-100 leading-relaxed">
+                            即日起可撥打諮詢專線或親至三慶里辦公處登記報名，名額有限請盡早卡位！
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 步驟二 -->
+                <div class="bg-emerald-800/80 backdrop-blur-sm p-8 rounded-3xl border border-emerald-700 relative">
+                    <div class="absolute -top-5 left-8 w-12 h-12 rounded-2xl bg-emerald-400 text-emerald-950 font-black text-xl flex items-center justify-center shadow-md">
+                        2
+                    </div>
+                    <div class="pt-4">
+                        <h4 class="text-xl font-bold text-white mb-3 flex items-center">
+                            <i class="fa-solid fa-location-dot mr-3 text-emerald-300"></i> 依指定時間集合
+                        </h4>
+                        <p class="text-emerald-100 leading-relaxed">
+                            請依照通知時間準時抵達學甲區三慶里活動中心，現場備有舒適座位與教學空間。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 步驟三 -->
+                <div class="bg-emerald-800/80 backdrop-blur-sm p-8 rounded-3xl border border-emerald-700 relative">
+                    <div class="absolute -top-5 left-8 w-12 h-12 rounded-2xl bg-emerald-400 text-emerald-950 font-black text-xl flex items-center justify-center shadow-md">
+                        3
+                    </div>
+                    <div class="pt-4">
+                        <h4 class="text-xl font-bold text-white mb-3 flex items-center">
+                            <i class="fa-solid fa-hands-bubbles mr-3 text-emerald-300"></i> 領料安心實作
+                        </h4>
+                        <p class="text-emerald-100 leading-relaxed">
+                            領取專用材料包，在郭曉怡老師的專業指導與全程陪伴下，安心快樂地完成專屬平安皂。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 課程講義與檔案下載專區 -->
+    <section id="download-section" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-3xl shadow-lg border border-emerald-100 overflow-hidden">
+            <div class="bg-gradient-to-r from-emerald-700 to-emerald-800 p-8 sm:p-12 text-white flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <span class="bg-emerald-600 text-emerald-100 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">講義檔案專區</span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold mb-2">植萃平安皂（8.2社區上課講義）.pdf</h3>
+                    <p class="text-emerald-100 text-base">內含完整配方比例與詳細步驟，歡迎點擊按鈕直接下載參考。</p>
+                </div>
+                <div>
+                    <a href="downloads/植萃平安皂（8.2社區上課講義）.pdf" download class="bg-white hover:bg-emerald-50 text-emerald-900 font-bold px-8 py-4 rounded-2xl shadow-md hover:shadow-lg transition flex items-center space-x-3 text-lg">
+                        <i class="fa-solid fa-file-arrow-down text-2xl text-emerald-700"></i>
+                        <span>下載 PDF 講義</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 配方摘要預覽 -->
+            <div class="p-8 sm:p-12 bg-emerald-50/50">
+                <h4 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                    <i class="fa-solid fa-clipboard-list text-emerald-700 mr-2"></i> 講義核心配方與摘要預覽 (總油重 750g / 8人份)
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-100">
+                        <span class="text-xs font-bold text-emerald-700 uppercase">A鍋：基礎油品</span>
+                        <ul class="mt-3 space-y-2 text-gray-700 text-sm font-medium">
+                            <li class="flex justify-between border-b pb-1"><span>椰子油</span><span class="font-bold">170 g</span></li>
+                            <li class="flex justify-between border-b pb-1"><span>棕櫚油</span><span class="font-bold">240 g</span></li>
+                            <li class="flex justify-between border-b pb-1"><span>橄欖油</span><span class="font-bold">270 g</span></li>
+                            <li class="flex justify-between"><span>甜杏仁油</span><span class="font-bold">70 g</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-100">
+                        <span class="text-xs font-bold text-emerald-700 uppercase">B鍋：鹼液與草藥</span>
+                        <ul class="mt-3 space-y-2 text-gray-700 text-sm font-medium">
+                            <li class="flex justify-between border-b pb-1"><span>氫氧化鈉 (NaOH)</span><span class="font-bold">110 g</span></li>
+                            <li class="flex justify-between border-b pb-1"><span>複方草藥汁</span><span class="font-bold">240 g</span></li>
+                            <span class="text-xs text-gray-500 block mt-1">(抹草、艾草、香茅、芙蓉、桃枝)</span>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-100">
+                        <span class="text-xs font-bold text-emerald-700 uppercase">C添：精油與分裝</span>
+                        <ul class="mt-3 space-y-2 text-gray-700 text-sm font-medium">
+                            <li class="flex justify-between border-b pb-1"><span>天然複方精油</span><span class="font-bold">14 ml</span></li>
+                            <span class="text-xs text-gray-500 block mt-1">迷迭香+薄荷尤加利+冷壓橘油+廣藿香</span>
+                            <li class="flex justify-between pt-2"><span>每杯分裝皂液</span><span class="font-bold text-emerald-700">130 g</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常見問答與安全注意事項 (Accordion) -->
+    <section class="py-16 sm:py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-3">安全注意事項與常見問答 (FAQ)</h3>
+            <p class="text-gray-600 text-lg">保障每位學員安全的重要提示，請點擊下方標題展開閱讀</p>
+        </div>
+
+        <div class="space-y-4" id="faq-accordion">
+            <!-- FAQ 1 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-emerald-100 overflow-hidden">
+                <button onclick="toggleAccordion('faq-1')" class="w-full p-6 text-left font-bold text-lg text-gray-900 flex justify-between items-center hover:bg-emerald-50/50 transition">
+                    <span class="flex items-center text-emerald-900">
+                        <i class="fa-solid fa-triangle-exclamation text-amber-500 mr-3"></i> 氫氧化鈉防護與穿戴要求
+                    </span>
+                    <i class="fa-solid fa-chevron-down text-emerald-700 transition-transform duration-300" id="icon-faq-1"></i>
+                </button>
+                <div id="faq-1" class="hidden px-6 pb-6 text-gray-700 leading-relaxed border-t border-gray-100 pt-4">
+                    <p class="font-medium text-red-600 mb-2">⚠️ 重要安全提示：</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>氫氧化鈉（NaOH）為強鹼，具強烈腐蝕性與危險性。</li>
+                        <li>打皂過程請<strong>全程配戴橡膠手套、護目鏡或眼鏡、穿著長袖衣服</strong>。</li>
+                        <li>打皂過程中請絕對<strong>避免用手觸碰眼睛</strong>，以免手上殘留的鹼液或皂液造成傷害。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-emerald-100 overflow-hidden">
+                <button onclick="toggleAccordion('faq-2')" class="w-full p-6 text-left font-bold text-lg text-gray-900 flex justify-between items-center hover:bg-emerald-50/50 transition">
+                    <span class="flex items-center text-emerald-900">
+                        <i class="fa-solid fa-flask text-emerald-700 mr-3"></i> 溶鹼時的安全操作方式
+                    </span>
+                    <i class="fa-solid fa-chevron-down text-emerald-700 transition-transform duration-300" id="icon-faq-2"></i>
+                </button>
+                <div id="faq-2" class="hidden px-6 pb-6 text-gray-700 leading-relaxed border-t border-gray-100 pt-4">
+                    <p class="font-medium text-gray-900 mb-2">正確溶鹼步驟：</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>溶鹼時，請<strong>分批將氫氧化鈉倒入水中溶解</strong>，絕對<strong>不要一次全部倒入</strong>，以免升溫過快產生劇烈噴濺。</li>
+                        <li>油量配方比例固定（總油重750g），請勿隨意增減，以免影響皂化反應與成品品質。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-emerald-100 overflow-hidden">
+                <button onclick="toggleAccordion('faq-3')" class="w-full p-6 text-left font-bold text-lg text-gray-900 flex justify-between items-center hover:bg-emerald-50/50 transition">
+                    <span class="flex items-center text-emerald-900">
+                        <i class="fa-solid fa-clock text-emerald-700 mr-3"></i> 皂液入模後如何處理與晾皂？
+                    </span>
+                    <i class="fa-solid fa-chevron-down text-emerald-700 transition-transform duration-300" id="icon-faq-3"></i>
+                </button>
+                <div id="faq-3" class="hidden px-6 pb-6 text-gray-700 leading-relaxed border-t border-gray-100 pt-4">
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>保溫：</strong>皂液入模後，建議放入保麗龍箱保溫 3 天。</li>
+                        <li><strong>分切：</strong>3 天後取出進行分切。</li>
+                        <li><strong>晾皂：</strong>將分切好的皂放置在陰涼通風處<strong>晾皂 45 天</strong>後即可安心使用！</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 報名聯絡資訊區塊 (Footer 資訊) -->
+    <section id="register" class="bg-emerald-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-3xl font-extrabold mb-4">歡迎踴躍報名參加</h3>
+            <p class="text-emerald-100 text-lg mb-8">如有課程相關疑問或欲登記報名，歡迎隨時與我們聯繫！</p>
+            
+            <div class="inline-flex flex-col sm:flex-row items-center justify-center bg-emerald-800/90 border border-emerald-700 px-8 py-6 rounded-3xl space-y-4 sm:space-y-0 sm:space-x-12 shadow-lg">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-full bg-emerald-700 flex items-center justify-center text-emerald-300 text-xl">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="text-xs text-emerald-300 block">主辦單位</span>
+                        <span class="text-lg font-bold">學甲區三慶里社區發展協會</span>
+                    </div>
+                </div>
+
+                <div class="hidden sm:block w-px h-12 bg-emerald-700"></div>
+
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-full bg-emerald-700 flex items-center justify-center text-emerald-300 text-xl">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="text-xs text-emerald-300 block">聯絡窗口</span>
+                        <span class="text-lg font-bold">郭曉怡 (0921-123456)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="bg-emerald-950 text-emerald-300/80 py-8 text-center text-sm border-t border-emerald-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© 2026 學甲區三慶里社區發展協會 版權所有. All rights reserved.</p>
+            <p class="mt-2">銀髮樂活手作坊・植萃手工皂製作流程教學網頁</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript 互動功能 -->
+    <script>
+        // FAQ 折疊選單切換
+        function toggleAccordion(id) {
+            const el = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                el.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // 字型大小切換 (無障礙輔助長者)
+        let isLargeFont = false;
+        function toggleFontSize() {
+            isLargeFont = !isLargeFont;
+            const body = document.getElementById('body-container');
+            const btnText = document.getElementById('font-btn-text');
+            if (isLargeFont) {
+                body.classList.add('text-lg-accessibility');
+                btnText.innerText = '恢復正常字體';
+            } else {
+                body.classList.remove('text-lg-accessibility');
+                btnText.innerText = '放大字體';
+            }
+        }
+    </script>
+</body>
+</html>
